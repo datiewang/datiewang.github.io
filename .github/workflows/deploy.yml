@@ -1,4 +1,4 @@
-name: Deploy Hugo to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -18,15 +18,11 @@ jobs:
         with:
           hugo-version: "latest"
 
-      - name: Install Node.js (optional, for npm or yarn)
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-
       - name: Build the site
         run: hugo --minify
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
+          token: ${{ secrets.AirBlue }}
           publish_dir: ./public
