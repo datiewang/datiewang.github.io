@@ -24,8 +24,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.AirBlue }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          user_name: "datiewang"
+          user_email: "suixinerwang@gmail.com"
           commit_message: "Deploy site - ${GITHUB_SHA}"
-          commit_user_name: "datiewang"
-          commit_user_email: "suixinerwang@gmail.com"
